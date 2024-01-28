@@ -6,7 +6,7 @@ This script organizes files in directories based on their extensions and last mo
 Clone the repo:
 
 ```bash
-  git clone git@github.com:gabrielhamdan/dirmanager-py.git
+  git clone https://github.com/gabrielhamdan/dirmanager-py.git
 ```
 
 ### Prerequisites
