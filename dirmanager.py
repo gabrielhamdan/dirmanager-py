@@ -11,7 +11,7 @@ if len(sys.argv) >= 2:
     CONFIG_FILE_PATH = sys.argv[1]
 
 # loads config file when informed
-if os.path.exists(CONFIG_FILE_PATH):
+if CONFIG_FILE_PATH and os.path.exists(CONFIG_FILE_PATH):
     with open(CONFIG_FILE_PATH, "r", encoding='utf-8') as config_file:
         user_config = json.load(config_file)
 else:
@@ -116,11 +116,6 @@ def main():
     for dir in os.listdir(TARGET_DIR):
         dir_path = os.path.join(TARGET_DIR, dir)
         if os.path.isdir(dir_path) and is_dir_managed(dir):
-            if is_dir_empty(dir_path):
-                log(f"Removed empty folder: {dir_path}")
-                os.rmdir(dir_path)
-                continue
-
             for file in os.listdir(dir_path):
                 file_path = os.path.join(dir_path, file)
                 last_mod = datetime.fromtimestamp(os.path.getmtime(file_path))
@@ -128,5 +123,9 @@ def main():
                 diff = current_datetime - last_mod
                 if diff.days >= EXP_DATE:
                     move_to_old(file, file_path)
+            
+            if is_dir_empty(dir_path):
+                log(f"Removed empty folder: {dir_path}")
+                os.rmdir(dir_path)
 
 main()
