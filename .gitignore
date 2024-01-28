@@ -1,0 +1,6 @@
+*/
+*.*
+!.gitignore
+!dirmanager.py
+!config.json
+!README.md
