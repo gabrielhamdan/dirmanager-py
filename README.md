@@ -20,13 +20,13 @@ Although optional, users can create a configuration JSON file (e.g., config.json
   "targetDir": "/path/to/target/directory", // Default: Standard download folder for the OS
   "delDir": "old_stuff",                    // Default: delete
   "logFile": "/path/to/log/file.txt",       // Default: None
-  "expDate": 42,                            // 30
-  "textDir": "text folder",                 // text
-  "imgDir": "cool images",                  // image
-  "audioDir": "music",                      // audio
-  "zipDir": "zipped files",                 // zip
-  "videoDir": "video",                      // video
-  "miscDir": "other"                        // misc
+  "expDate": 42,                            // Default: 30
+  "textDir": "text folder",                 // Default: text
+  "imgDir": "cool images",                  // Default: image
+  "audioDir": "music",                      // Default: audio
+  "zipDir": "zipped files",                 // Default: zip
+  "videoDir": "video",                      // Default: video
+  "miscDir": "other"                        // Default: misc
 }
 ```
 
